@@ -1,0 +1,922 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      
+      --primary-color: #667eea;
+      --secondary-color: #764ba2;
+      --accent-color: #00f2fe;
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --text-light: #718096;
+      --white: #ffffff;
+      --light-bg: #f7fafc;
+      --border-color: rgba(255, 255, 255, 0.1);
+      
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+      
+      --border-radius-sm: 0.375rem;
+      --border-radius-md: 0.5rem;
+      --border-radius-lg: 0.75rem;
+      --border-radius-xl: 1rem;
+      
+    /* Spacing scale used throughout the app */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+
+    /* Common utility variables referenced by component styles */
+    --border-radius: 0.75rem;
+    --bg-secondary: rgba(255,255,255,0.04);
+    --bg-glass: rgba(255,255,255,0.06);
+    --bg-card: rgba(255,255,255,0.08);
+
+      --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+
+    /* Add this to the very bottom of your frontend/src/styles.css file */
+/* Add this to the very bottom of your frontend/src/styles.css file */
+
+/* --- COMMON AUTH PAGE STYLES --- */
+/* These styles apply to any page where the body has the "auth-page-active" class */
+
+body.auth-page-active {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body.auth-page-active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10%);
+    background-size: 20px 20px;
+    animation: moveBackground 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* In frontend/src/styles.css */
+
+body.auth-page-active .auth-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px; /* Increased padding for more internal space */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    width: 100%;
+    max-width: 500px; /* <-- THIS IS THE KEY CHANGE. Increased from 400px to 500px */
+    text-align: center;
+    animation: float 5s ease-in-out infinite;
+}
+
+body.auth-page-active .auth-container h2 {
+    font-size: 32px; /* Slightly larger title for a bigger card */
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.auth-page-active form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap for better spacing in a larger card */
+}
+
+body.auth-page-active label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-align: left;
+}
+
+body.auth-page-active input {
+    padding: 15px; /* Slightly larger input fields */
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.auth-page-active input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.auth-page-active input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+body.auth-page-active .btn {
+    padding: 15px; /* Slightly larger button */
+    border: none;
+    border-radius: 8px;
+    font-size: 18px; /* Larger font size for the button */
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+body.auth-page-active .primary-btn {
+    background: #00f2fe;
+    color: #000;
+}
+
+body.auth-page-active .primary-btn:hover {
+    background: #4facfe;
+    transform: translateY(-3px);
+}
+
+/* Responsive styles for auth pages */
+@media (max-width: 480px) {
+    body.auth-page-active .auth-container {
+        padding: 30px; /* Slightly smaller padding on mobile */
+        width: 90%;
+    }
+    body.auth-page-active .auth-container h2 {
+        font-size: 24px;
+    }
+    body.auth-page-active input, body.auth-page-active .btn {
+        padding: 12px; /* Adjusted padding for mobile */
+        font-size: 16px;
+    }
+}
+
+
+
+/* course styles */
+
+/* Add this to the very bottom of your frontend/src/styles.css file */
+
+/* --- COURSE SELECT PAGE THEME --- */
+/* These styles apply only when the body has the "course-select-active" class */
+
+body.course-select-active {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3730a3 100%);
+    color: #fff;
+    position: relative;
+    /* allow page scrolling so long pages can scroll */
+    overflow: auto;
+}
+
+body.course-select-active .min-h-screen {
+    min-height: 100vh;
+}
+
+body.course-select-active .relative {
+    position: relative;
+}
+
+body.course-select-active .absolute {
+    position: absolute;
+}
+
+body.course-select-active .inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* keep utility class but don't force site-wide hidden overflow for course-select theme */
+body.course-select-active .overflow-hidden {
+    overflow: visible;
+}
+
+body.course-select-active .opacity-10 {
+    opacity: 0.1;
+}
+
+/* Animated Background Elements */
+body.course-select-active .bg-blur-1 {
+    top: 25%;
+    left: 25%;
+    width: 16rem;
+    height: 16rem;
+    background: #60a5fa;
+    border-radius: 50%;
+    filter: blur(48px);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+body.course-select-active .bg-blur-2 {
+    bottom: 25%;
+    right: 25%;
+    width: 20rem;
+    height: 20rem;
+    background: #a78bfa;
+    border-radius: 50%;
+    filter: blur(48px);
+    animation: pulse 3s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+body.course-select-active .bg-blur-3 {
+    top: 50%;
+    left: 50%;
+    width: 24rem;
+    height: 24rem;
+    background: #2dd4bf;
+    border-radius: 50%;
+    filter: blur(48px);
+    animation: pulse 3s ease-in-out infinite;
+    animation-delay: 1s;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.1); }
+}
+
+/* Home Button */
+body.course-select-active .home-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+body.course-select-active .home-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Container and Layout */
+body.course-select-active .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+body.course-select-active .z-10 {
+    z-index: 10;
+}
+
+body.course-select-active .py-12 {
+    padding: 3rem 0;
+}
+
+body.course-select-active .text-center {
+    text-align: center;
+}
+
+body.course-select-active .mb-16 {
+    margin-bottom: 4rem;
+}
+
+body.course-select-active .mb-8 {
+    margin-bottom: 2rem;
+}
+
+body.course-select-active .mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+body.course-select-active .mb-4 {
+    margin-bottom: 1rem;
+}
+
+body.course-select-active .mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+body.course-select-active .mb-3 {
+    margin-bottom: 0.75rem;
+}
+
+body.course-select-active .mt-16 {
+    margin-top: 4rem;
+}
+
+/* Hero Section */
+body.course-select-active .hero-image {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+body.course-select-active .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body.course-select-active .graduation-cap {
+    width: 2rem;
+    height: 2rem;
+    color: #60a5fa;
+    margin: 0 auto 1rem;
+}
+
+body.course-select-active .main-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    body.course-select-active .main-title { font-size: 4rem; }
+}
+@media (min-width: 1024px) {
+    body.course-select-active .main-title { font-size: 4.5rem; }
+}
+
+body.course-select-active .gradient-text {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.course-select-active .subtitle {
+    font-size: 1.25rem;
+    color: #bfdbfe;
+    margin-bottom: 1rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    body.course-select-active .subtitle { font-size: 1.5rem; }
+}
+
+body.course-select-active .tagline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+    color: #bfdbfe;
+}
+
+body.course-select-active .star {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #fbbf24;
+    fill: currentColor;
+}
+
+/* Card Grid */
+body.course-select-active .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    body.course-select-active .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+    body.course-select-active .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+body.course-select-active .card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px);
+    border-radius: 0.75rem;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+body.course-select-active .card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+body.course-select-active .card-image {
+    position: relative;
+    height: 12rem;
+    overflow: hidden;
+}
+
+body.course-select-active .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+body.course-select-active .card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+body.course-select-active .gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+body.course-select-active .level-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+
+body.course-select-active .gradient-pink { background: linear-gradient(to right, #f472b6, #e11d48); }
+body.course-select-active .gradient-blue { background: linear-gradient(to right, #60a5fa, #4f46e5); }
+body.course-select-active .gradient-amber { background: linear-gradient(to right, #fbbf24, #ea580c); }
+body.course-select-active .gradient-purple { background: linear-gradient(to right, #a78bfa, #7c3aed); }
+body.course-select-active .gradient-emerald { background: linear-gradient(to right, #34d399, #0d9488); }
+body.course-select-active .gradient-cyan { background: linear-gradient(to right, #22d3ee, #3b82f6); }
+
+body.course-select-active .card-content {
+    padding: 2rem;
+    position: relative;
+}
+
+body.course-select-active .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+body.course-select-active .card:hover .card-title {
+    color: #93c5fd;
+}
+
+body.course-select-active .card-subtitle {
+    color: #93c5fd;
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+}
+
+body.course-select-active .card-description {
+    color: #bfdbfe;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+body.course-select-active .start-button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+body.course-select-active .start-button:hover {
+    box-shadow: 0 10px 25px -3px rgba(59, 130, 246, 0.25);
+}
+
+body.course-select-active .hover-border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+body.course-select-active .card:hover .hover-border {
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+/* Bottom CTA Section */
+body.course-select-active .bottom-cta {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+body.course-select-active .cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+body.course-select-active .cta-text {
+    color: #bfdbfe;
+    font-weight: 500;
+}
+
+body.course-select-active .final-text {
+    color: rgba(191, 219, 254, 0.8);
+    font-size: 1.125rem;
+    max-width: 32rem;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Loading Screen */
+body.course-select-active .loading-screen {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3730a3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.course-select-active .loading-content {
+    text-align: center;
+}
+
+body.course-select-active .spinner {
+    animation: spin 1s linear infinite;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid transparent;
+    border-bottom: 2px solid white;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+body.course-select-active .loading-text {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Icons */
+body.course-select-active .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+body.course-select-active .large-icon {
+    width: 4rem;
+    height: 4rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Animations for elements */
+body.course-select-active .fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+body.course-select-active .slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Add this to the very bottom of your frontend/src/styles.css file */
+
+/* --- COMMON CLASS PAGE STYLES class1-5--- */
+/* These styles apply to any page where the body has the "class-page-active" class */
+
+body.class-page-active {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, #e5e7eb 0%, #d1d5db 100%);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+}
+
+body.class-page-active .container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Sidebar Styles */
+body.class-page-active .sidebar {
+    width: 280px;
+    background: var(--bg-secondary);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+body.class-page-active .sidebar-header {
+    padding: var(--spacing-xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.class-page-active .backsection {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-glass);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-smooth);
+    font-weight: 500;
+    font-size: 0.875rem;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: var(--spacing-lg);
+}
+
+body.class-page-active .backsection:hover {
+    background: var(--primary-gradient);
+    transform: translateX(4px);
+}
+
+body.class-page-active .GuideHead {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: var(--spacing-md);
+    letter-spacing: -0.02em;
+    position: relative;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.class-page-active .GuideHead::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--success-gradient);
+    border-radius: 2px;
+}
+
+body.class-page-active .sidebar-content {
+    flex: 1;
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+}
+
+body.class-page-active .sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+body.class-page-active .class-item {
+    padding: var(--spacing-lg);
+    background: var(--bg-glass);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+body.class-page-active .class-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: var(--transition-smooth);
+    z-index: -1;
+}
+
+body.class-page-active .class-item:hover::before,
+body.class-page-active .class-item.selected::before {
+    left: 0;
+}
+
+body.class-page-active .class-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.class-page-active .class-item.selected {
+    background: var(--primary-gradient);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Main Content */
+body.class-page-active .main-content {
+    flex: 1;
+    margin-left: 280px;
+    background: linear-gradient(145deg, #e5e7eb 0%, #d1d5db 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body.class-page-active .content-wrapper {
+    padding: var(--spacing-xl);
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+body.class-page-active .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+body.class-page-active .profile-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    cursor: pointer;
+}
+
+body.class-page-active .profile-display {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.class-page-active .profile-display:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+body.class-page-active .profile-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: var(--primary-gradient);
+    padding: 3px;
+    transition: var(--transition-smooth);
+}
+
+body.class-page-active .profile-icon:hover {
+    transform: scale(1.08);
+}
+
+body.class-page-active .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+body.class-page-active .profile-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+body.class-page-active .profile-email {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ... (All other common styles like top-bar, days-container, video-section, links-section, etc. would go here ...) */

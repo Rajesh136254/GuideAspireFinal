@@ -1,0 +1,442 @@
+﻿[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+[35mPrerendered 0 static routes.[39m
+Application bundle generation failed. [7.547 seconds] - 2025-11-23T05:39:34.732Z
+
+node.exe : [1m[31m[31mX 
+[41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 
+'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+At C:\Users\rajes\AppData\Roaming\npm\ng.ps1:24 char:5
++     & "node$exe"  
+"$basedir/node_modules/@angular/cli/bin/ng.js" $arg ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([1m    
+[31m[31mX...r-compiler][0m:String) [], Remot    
+eException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+    
+src/app/components/pages/dashboard/dashboard.html:18:19:
+[37m      18 Γöé     <button 
+*ngIf="[32mcurrentSectionName[37m !== 'class11-12'"
+         Γò╡                    
+[32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'showClassSelection' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:25:16:
+[37m      25 Γöé     <div 
+*ngIf="[32mshowClassSelection[37m" id="class-selection" 
+class="mb...
+         Γò╡                 [32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:38:67:
+[37m      38 Γöé ...k)="currentClassId = cls.id; 
+loadDays(cls.id, [32mcurrentSectionName[37m)"
+         Γò╡                                              
+    [32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'showDaySelection' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:47:16:
+[37m      47 Γöé     <div 
+*ngIf="[32mshowDaySelection[37m" class="mb-6" 
+id="day-selection">
+         Γò╡                 [32m~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:56:41:
+[37m      56 Γöé ...lick)="currentDayId = 
+([32mcurrentSectionName[37m === 'summer special' ...
+         Γò╡                           
+[32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:56:146:
+[37m      56 Γöé ...String() : day.id); 
+loadContent(currentDayId, [32mcurrentSectionName[37m)"
+         Γò╡                                              
+    [32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:57:52:
+[37m      57 Γöé ...ed]="currentDayId === 
+([32mcurrentSectionName[37m === 'summer special' ...
+         Γò╡                           
+[32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'showContentForm' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:65:16:
+[37m      65 Γöé     <div 
+*ngIf="[32mshowContentForm[37m" class="bg-white p-6 
+rounded-lg sh...
+         Γò╡                 [32m~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:73:20:
+[37m      73 Γöé         <div 
+*ngIf="[32mcurrentSectionName[37m !== 'summer special'">
+         Γò╡                     
+[32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:78:20:
+[37m      78 Γöé         <div 
+*ngIf="[32mcurrentSectionName[37m === 'summer special'">
+         Γò╡                     
+[32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:93:20:
+[37m      93 Γöé         <div 
+*ngIf="[32mcurrentSectionName[37m !== 'summer special'">
+         Γò╡                     
+[32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'currentSectionName' does not exist on type 
+'DashboardComponent'. Did you mean 
+'currentSectionId'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:98:33:
+[37m      98 Γöé ...utton 
+(click)="saveDay([32mcurrentSectionName[37m)" 
+class="w-full bg-pu...
+         Γò╡                           
+[32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'initializeDaysForSkill' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:172:61:
+[37m      172 Γöé ...rentSelectedSkillId = skill.id; 
+[32minitializeDaysForSkill[37m(skill.id)"
+          Γò╡                                    
+[32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'initializeDaysForSkill' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:190:29:
+[37m      190 Γöé ...   <button (click)="[32minitializeD
+aysForSkill[37m(currentSelectedSkil...
+          Γò╡                        
+[32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'learningPathDays' does not exist on type 
+'DashboardComponent'. Did you mean 'learningDays'?[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:194:36:
+[37m      194 Γöé             <div *ngFor="let day of 
+[32mlearningPathDays[37m"
+          Γò╡                                     
+[32m~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No 
+overload matches this call.
+  Overload 1 of 2, '(observerOrNext?: Partial<Observer<{ 
+day: Day; videos: Video[]; }>> | ((value: { day: Day; 
+videos: Video[]; }) => void)): Subscription', gave the 
+following error.
+    Type '(days: any[]) => void' is not assignable to 
+type '(value: { day: Day; videos: Video[]; }) => void'.
+      Types of parameters 'days' and 'value' are 
+incompatible.
+        Type '{ day: Day; videos: Video[]; }' is missing 
+the following properties from type 'any[]': length, pop, 
+push, concat, and 29 more.
+  Overload 2 of 2, '(next?: (value: { day: Day; videos: 
+Video[]; }) => void, error?: (error: any) => void, 
+complete?: () => void): Subscription', gave the following 
+error.
+    Object literal may only specify known properties, and 
+'next' does not exist in type '(value: { day: Day; 
+videos: Video[]; }) => void'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.ts:140:8:
+[37m      140 Γöé         [32mnext[37m: (days: any[]) 
+=> {
+          Γò╡         [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2769: No 
+overload matches this call.
+  Overload 1 of 2, '(observerOrNext?: Partial<Observer<{ 
+day: Day; videos: Video[]; }>> | ((value: { day: Day; 
+videos: Video[]; }) => void)): Subscription', gave the 
+following error.
+    Type '(days: any[]) => void' is not assignable to 
+type '(value: { day: Day; videos: Video[]; }) => void'.
+      Types of parameters 'days' and 'value' are 
+incompatible.
+        Type '{ day: Day; videos: Video[]; }' is missing 
+the following properties from type 'any[]': length, pop, 
+push, concat, and 29 more.
+  Overload 2 of 2, '(next?: (value: { day: Day; videos: 
+Video[]; }) => void, error?: (error: any) => void, 
+complete?: () => void): Subscription', gave the following 
+error.
+    Object literal may only specify known properties, and 
+'next' does not exist in type '(value: { day: Day; 
+videos: Video[]; }) => void'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.ts:181:8:
+[37m      181 Γöé         [32mnext[37m: (days: any[]) 
+=> {
+          Γò╡         [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2554: 
+Expected 1 arguments, but got 2.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.ts:191:49:
+[37m      191 Γöé ...      
+this.apiService.addSummerDay('summer', 
+[32mnextDay[37m).subscribe({
+          Γò╡                                             
+    [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'getSummerDayContent' does not exist on type 
+'ApiService'. Did you mean 'getSummerContent'?[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.ts:223:22:
+[37m      223 Γöé       this.apiService.[32mgetSummerDay
+Content[37m(dayId).subscribe({
+          Γò╡                       
+[32m~~~~~~~~~~~~~~~~~~~[0m
+
+  'getSummerContent' is declared here.
+
+    src/app/services/api.service.ts:68:2:
+[37m      68 Γöé   [32mgetSummerContent[37m(dayId: 
+string): Observable<{ day: Day, videos: ...
+         Γò╡   [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2554: 
+Expected 2 arguments, but got 5.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.ts:268:71:
+[37m      268 Γöé ...'summer', [32mthis.topic, 
+this.resourceLink, this.projectLink[37m).sub...
+          Γò╡              
+[32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

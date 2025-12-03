@@ -1,0 +1,44 @@
+/* frontend/src/app/pages/signup/signup.component.css */
+
+/* --- UNIQUE SIGNUP STYLES --- */
+
+.loginsign {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.loginsign a {
+    color: #00f2fe;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.loginsign a:hover {
+    color: #4facfe;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.forgot-password a {
+    color: #00f2fe;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #4facfe;
+}
+
+/* Add the small responsive text style if it's missing from the global block */
+@media (max-width: 480px) {
+    .loginsign, .forgot-password {
+        font-size: 12px;
+    }
+}

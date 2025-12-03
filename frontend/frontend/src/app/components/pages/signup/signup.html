@@ -1,0 +1,45 @@
+<!-- signup.component.html -->
+
+<!-- Use *ngIf to toggle between the two forms -->
+<div class="auth-container" *ngIf="isShowingSignup">
+    <h2>Sign Up</h2>
+    <!-- Use ngSubmit to call our onSignup method -->
+    <form (ngSubmit)="onSignup()">
+        <label for="name">Name</label>
+        <!-- Use [(ngModel)] for two-way data binding -->
+        <input type="text" id="name" name="name" placeholder="Enter your name" required [(ngModel)]="signupData.name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required [(ngModel)]="signupData.email">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required [(ngModel)]="signupData.password">
+
+        <!-- Disable the button while loading and show a message -->
+        <button type="submit" class="btn primary-btn" [disabled]="isLoading">
+            <span *ngIf="!isLoading">Sign Up</span>
+            <span *ngIf="isLoading">Signing Up...</span>
+        </button>
+    </form>
+    <p class="loginsign">Already have an account? <a routerLink="/login">Log In</a></p>
+    <!-- Use a click event to toggle the form -->
+    <p class="forgot-password"><a href="javascript:void(0)" (click)="showForgotPassword()">Forgot Password?</a></p>
+</div>
+
+<!-- The "Forgot Password" form, shown when isShowingSignup is false -->
+<div class="auth-container" *ngIf="!isShowingSignup">
+    <h2>Forgot Password</h2>
+    <form (ngSubmit)="onForgotPassword()">
+        <label for="forgotEmail">Email</label>
+        <input type="email" id="forgotEmail" name="email" placeholder="Enter your email" required [(ngModel)]="forgotPasswordData.email">
+
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required [(ngModel)]="forgotPasswordData.newPassword">
+
+        <button type="submit" class="btn primary-btn" [disabled]="isLoading">
+            <span *ngIf="!isLoading">Reset Password</span>
+            <span *ngIf="isLoading">Resetting...</span>
+        </button>
+    </form>
+    <p class="loginsign"><a href="javascript:void(0)" (click)="showSignup()">Back to Sign Up</a></p>
+</div>

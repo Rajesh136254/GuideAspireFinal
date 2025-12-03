@@ -1,0 +1,124 @@
+<!-- Mobile Menu Toggle -->
+<button class="mobile-menu-toggle" #mobileMenuToggle (click)="toggleMobileMenu()">
+  <i class="fas fa-bars"></i>
+</button>
+
+<div class="app-layout">
+  <!-- Left Navigation -->
+  <nav class="sidebar" #sidebar>
+    <div class="sidebar-header">
+      <a routerLink="/course-select" class="backsection">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Go to LevelSelection</span>
+      </a>
+      <h1 class="GuideHead">GuideAspire</h1>
+    </div>
+    <div class="sidebar-content">
+      <ul>
+        <li class="class-item" data-class="6" (click)="selectClass(6)">Class 6</li>
+        <li class="class-item" data-class="7" (click)="selectClass(7)">Class 7</li>
+        <li class="class-item" data-class="8" (click)="selectClass(8)">Class 8</li>
+        <li class="class-item" data-class="9" (click)="selectClass(9)">Class 9</li>
+        <li class="class-item" data-class="10" (click)="selectClass(10)">Class 10</li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="content-wrapper">
+      <!-- Header Section with Profile and Language Selection -->
+      <div class="header-section">
+        <!-- Profile Section -->
+        <div class="profile-section" #profileSection>
+          <div class="profile-display" #profileDisplay (click)="toggleProfileDropdown($event)">
+            <img src="https://via.placeholder.com/40" alt="Profile" class="profile-icon" #profileIcon>
+            <div class="profile-info">
+              <span class="profile-name" #userName>Loading...</span>
+              <span class="profile-email" #userEmailDisplay>Loading...</span>
+            </div>
+            <i class="fas fa-chevron-down" #profileDropdownToggle></i>
+          </div>
+
+          <div class="profile-dropdown" #profileDropdown>
+            <div class="progress-summary" #progressSummary>Progress: Loading...</div>
+            <button #editProfileBtn (click)="openEditProfileModal()">
+              <i class="fas fa-user-edit"></i> Edit Profile
+            </button>
+            <button #changePictureBtn (click)="changeProfilePicture()">
+              <i class="fas fa-camera"></i> Change Profile Picture
+            </button>
+            <input type="file" #profilePictureInput accept="image/*" (change)="onProfilePictureChange($event)">
+            <button #logoutBtn (click)="logout()">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+          </div>
+        </div>
+
+        <!-- Language Selection -->
+        <div class="top-bar">
+          <select id="language-select" #languageSelect (change)="onLanguageChange()">
+            <option value="english">🇺🇸 English</option>
+            <option value="telugu">🇮🇳 Telugu</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Days Navigation -->
+      <div class="days-container">
+        <div class="days-header">
+          <div class="section-header" #sectionHeader></div>
+          <div class="sub-section-header" #subSectionHeader></div>
+        </div>
+
+        <!-- Topic Name -->
+        <div id="topic-name" #topicName></div>
+
+        <!-- Video Player -->
+        <div class="video-container">
+          <iframe #videoFrame width="100%" height="500" src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowfullscreen loading="lazy" title="Video player"></iframe>
+        </div>
+
+        <div class="nav-buttons-container">
+          <!-- Navigation buttons will be injected here or managed by component -->
+        </div>
+
+        <div class="days-scroll" #daysContainer></div>
+
+        <div class="action-buttons">
+          <a #exerciseLink href="#" target="_blank" class="action-btn exercise-btn">
+            <i class="fas fa-dumbbell"></i> Go to Exercise
+          </a>
+          <a #projectLink href="#" target="_blank" class="action-btn project-btn">
+            <i class="fas fa-project-diagram"></i> Go to Project
+          </a>
+          <button #completeBtn (click)="markDayComplete()" class="action-btn complete-btn">
+            <i class="fas fa-check-circle"></i> Mark Day as Complete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Profile Modal -->
+<div class="modal" #editProfileModal (click)="closeEditProfileModalOnClickOutside($event)">
+  <div class="modal-content">
+    <button class="close-btn" #closeModalBtn (click)="closeEditProfileModal()">&times;</button>
+    <h2>Edit Profile</h2>
+    <form (submit)="saveProfile($event)">
+      <label for="editName">Full Name</label>
+      <input type="text" #editName name="name" required placeholder="Enter your full name">
+
+      <label for="editEmail">Email Address</label>
+      <input type="email" #editEmail name="email" disabled placeholder="your@email.com">
+
+      <label for="editPassword">New Password (optional)</label>
+      <input type="password" #editPassword name="password" placeholder="Leave blank to keep current password">
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+﻿[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+[35mPrerendered 0 static routes.[39m
+Application bundle generation failed. [6.837 seconds] - 2025-11-23T05:44:21.244Z
+
+node.exe : [1m[31m[31mX 
+[41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 
+'learningPathDays' does not exist on type 
+'DashboardComponent'. Did you mean 'learningDays'?[0m 
+[1m[35m[plugin angular-compiler][0m
+At C:\Users\rajes\AppData\Roaming\npm\ng.ps1:24 char:5
++     & "node$exe"  
+"$basedir/node_modules/@angular/cli/bin/ng.js" $arg ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([1m[31m[3 
+   1mX...r-compiler][0m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+    
+src/app/components/pages/dashboard/dashboard.html:194:36:
+[37m      194 Γöé             <div *ngFor="let day of 
+[32mlearningPathDays[37m"
+          Γò╡                                     
+[32m~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/dashboard.ts:14:15:
+[37m      14 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

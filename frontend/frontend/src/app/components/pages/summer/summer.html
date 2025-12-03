@@ -1,0 +1,60 @@
+<div class="container">
+  <header>
+    <h1>Summer Special - GuideAspire</h1>
+    <p>25 Days of Career Exploration: Discover Jobs, Practice Real-World Projects, and Set Your Goals!</p>
+    <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="ariaLabel">{{themeToggleText}}</button>
+  </header>
+  <div class="progress-bar">
+    <div class="progress-bar-fill" [style.width.%]="(progress.length / 25) * 100"></div>
+  </div>
+  <input type="text" id="search-input" [(ngModel)]="searchQuery" placeholder="Search careers...">
+  <div id="task-list">
+    <div *ngFor="let dayData of filteredProgramDays" class="task-card">
+      <div class="task-header" (click)="toggleDetails(dayData.day, $event)" role="button" [attr.aria-expanded]="isExpanded(dayData.day)" [attr.aria-controls]="'details-' + dayData.day">
+        <h2>Day {{dayData.day}}: {{dayData.topic}}</h2>
+        <div>
+          <button class="complete" [class.completed]="isCompleted(dayData.day)" (click)="$event.stopPropagation(); saveProgress(dayData.day)" [attr.aria-label]="isCompleted(dayData.day) ? 'Unmark' : 'Mark complete'">
+            {{isCompleted(dayData.day) ? 'Completed' : 'Mark Complete'}}
+          </button>
+          <button class="interested" [class.not-interested]="!isInterested(dayData.day)" (click)="$event.stopPropagation(); saveInterested(dayData.day)" [attr.aria-label]="isInterested(dayData.day) ? 'Unmark' : 'Mark interested'">
+            {{isInterested(dayData.day) ? 'Interested ❤️' : 'Mark Interested'}}
+          </button>
+        </div>
+      </div>
+      <div class="task-details" [id]="'details-' + dayData.day" [class.active]="isExpanded(dayData.day)">
+        <p *ngIf="dayData.topic"><strong>Topic:</strong> {{dayData.topic}}</p>
+        <p *ngIf="dayData.resource"><strong>Resource:</strong> <a [href]="dayData.resource" target="_blank">Access Resource</a></p>
+        <p *ngIf="dayData.project"><strong>Project:</strong> <a [href]="dayData.project" target="_blank">View Project</a></p>
+        <div *ngIf="dayData.youtube" class="video-container">
+          <iframe [src]="dayData.youtube" frameborder="0" [attr.allow]="'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'" allowfullscreen [attr.title]="'Tutorial for Day ' + dayData.day"></iframe>
+        </div>
+        <p *ngIf="!dayData.youtube"><strong>Video:</strong> Not available.</p>
+      </div>
+    </div>
+  </div>
+  <div id="interested-section">
+    <h2>Your Interested Careers</h2>
+    <ul id="interested-ul">
+      <li *ngFor="let day of sortedInterested" [style.background-color]="'rgba(59, 130, 246, 0.1)'">
+        Day {{day}}: {{getTopic(day)}}
+      </li>
+    </ul>
+  </div>
+  <div id="goal-section" [style.display]="progress.length === 25 ? 'block' : 'none'">
+    <h2>Set Your Career Goal</h2>
+    <p id="current-goal">{{goal ? 'Current Goal: ' + goal : ''}}</p>
+    <textarea id="goal-text" [(ngModel)]="goal" placeholder="Write your career goal (e.g., Become a Software Developer)" rows="4"></textarea>
+    <button id="save-goal" (click)="saveGoalHandler()">Save Goal</button>
+  </div>
+  <div *ngIf="isLoading" id="loading" class="loading">
+    <div class="spinner"></div>Loading...
+  </div>
+  <div *ngIf="showError" id="error" class="error">
+    Failed to load progress. <button (click)="fetchProgress()">Retry</button>
+  </div>
+  <div #toast id="toast" class="toast" [class.error]="toastIsError" [class.show]="showToastFlag" [innerText]="toastMessage"></div>
+  <footer>
+    <p id="progress">Progress: {{progress.length}} / 25 days completed</p>
+    <p>© 2025 GuideAspire. Empowering students with free resources!</p>
+  </footer>
+</div>

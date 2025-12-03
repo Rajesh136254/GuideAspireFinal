@@ -1,0 +1,326 @@
+<!-- dashboard.html - Direct conversion of your original HTML -->
+<div class="min-h-screen">
+  <!-- Navigation -->
+  <nav class="bg-gradient-to-r from-purple-600 to-blue-500 p-4 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-white">GuideAspire Admin Dashboard</h1>
+      <select [(ngModel)]="currentSectionId" (ngModelChange)="onSectionChange($event)"
+        class="p-2 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300">
+        <option value="">Select Section</option>
+        <option *ngFor="let section of sections" [value]="section.id">{{ section.name }}</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mx-auto p-6">
+    <!-- Toggle Career Management -->
+    <button id="toggle-career" *ngIf="currentSectionName !== 'class11-12'" (click)="toggleCareerManagement()"
+      class="bg-purple-500 text-white px-4 py-2 rounded mb-4 hover:bg-purple-600 transition">Manage Career
+      Paths</button>
+
+    <!-- Class Selection -->
+    <div *ngIf="showClassSelection" id="class-selection" class="mb-6">
+
+      <h2 class="text-xl font-semibold text-gray-800 mb-3">Select Class</h2>
+      <div class="flex items-center justify-between mb-2">
+      <!-- Section-level import/export buttons -->
+      <div class="import-export-buttons mb-4">
+        <button id="download-section-data" (click)="downloadSectionData()" class="download-btn flex items-center">
+          <i class="fas fa-download mr-2"></i>Download Section Data
+        </button>
+        <label for="section-file-input" class="import-btn flex items-center cursor-pointer">
+          <i class="fas fa-upload mr-2"></i>Import Section Data
+        </label>
+        <input #sectionFileInput type="file" id="section-file-input" (change)="importSectionData($event)" accept=".xlsx,.xls"
+          style="display: none;">
+      </div>
+      <div class="import-export-buttons">
+        <button id="download-class-data" (click)="downloadClassData()" class="download-btn flex items-center">
+          <i class="fas fa-download mr-2"></i>Download Class Data
+        </button>
+        <!-- Update the import button to match the original style -->
+        <label for="file-input" class="import-btn flex items-center cursor-pointer">
+          <i class="fas fa-upload mr-2"></i>Import Class Data
+        </label>
+        <input #fileInput type="file" id="file-input" (change)="importClassData($event)" accept=".xlsx,.xls"
+          style="display: none;">
+      </div>
+      </div>
+      <div id="class-list" class="flex space-x-4 overflow-x-auto horizontal-scroll pb-2">
+        <button *ngFor="let cls of classes" (click)="currentClassId = cls.id; loadDays(cls.id, currentSectionName)"
+          [class.selected]="currentClassId === cls.id"
+          class="item px-4 py-2 rounded-lg shadow hover:bg-blue-100 transition">
+          {{ cls.name }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Day Selection -->
+    <div *ngIf="showDaySelection" class="mb-6" id="day-selection">
+
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">Select Day</h2>
+        <button id="add-day" (click)="addDay()"
+          class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center">
+          <i class="fas fa-plus mr-2"></i>Add Day
+        </button>
+      </div>
+      <div id="day-list" class="flex space-x-4 overflow-x-auto horizontal-scroll pb-2">
+        <button *ngFor="let day of days"
+          (click)="currentDayId = (currentSectionName === 'summer special' ? day.day_number.toString() : day.id); loadContent(currentDayId, currentSectionName)"
+          [class.selected]="currentDayId === (currentSectionName === 'summer special' ? day.day_number.toString() : day.id)"
+          class="item px-4 py-2 rounded-lg shadow hover:bg-blue-100 transition">
+          Day {{ day.day_number }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Content Form -->
+    <div *ngIf="showContentForm" class="bg-white p-6 rounded-lg shadow-lg" id="content-form-container">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Day Content</h2>
+      <div class="space-y-4" id="content-form">
+        <div>
+          <label for="topic" class="block text-gray-700 font-medium">Topic</label>
+          <input [(ngModel)]="topic" id="topic"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+            placeholder="Enter topic">
+        </div>
+
+        <div *ngIf="currentSectionName !== 'summer special'">
+          <label for="quiz" class="block text-gray-700 font-medium">Quiz Link</label>
+          <input [(ngModel)]="quizLink" id="quiz"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+            placeholder="Enter quiz link">
+        </div>
+
+        <div *ngIf="currentSectionName === 'summer special'">
+          <label for="resource" class="block text-gray-700 font-medium">Resource Link</label>
+          <input [(ngModel)]="resourceLink" id="resource"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+            placeholder="Enter resource link">
+        </div>
+
+        <div>
+          <label for="project" class="block text-gray-700 font-medium">Project Link</label>
+          <input [(ngModel)]="projectLink" id="project"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+            placeholder="Enter project link">
+        </div>
+
+        <div>
+          <label for="english-youtube" class="block text-gray-700 font-medium">English YouTube Link</label>
+          <input [(ngModel)]="englishYoutube" id="english-youtube"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+            placeholder="Enter English YouTube link">
+        </div>
+
+        <div *ngIf="currentSectionName !== 'summer special'">
+          <label for="telugu-youtube" class="block text-gray-700 font-medium">Telugu YouTube Link</label>
+          <input [(ngModel)]="teluguYoutube" id="telugu-youtube"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+            placeholder="Enter Telugu YouTube link">
+        </div>
+
+        <button (click)="saveDay(currentSectionName)"
+          class="w-full bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">Save Day
+          Details</button>
+      </div>
+    </div>
+
+    <!-- Career Paths Management -->
+    <div *ngIf="showCareerManagement" id="career-management" class="mt-8 p-6 bg-white rounded-lg shadow-lg">
+
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Manage Career Paths (Class 11-12)</h2>
+      <div class="space-y-6">
+        <!-- Categories -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-medium">Categories</h3>
+            <div class="flex items-center space-x-2">
+              <input [(ngModel)]="newCategoryName" placeholder="Category Name (e.g., Engineering)"
+                class="p-2 border rounded">
+              <button (click)="addCategory()"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Add Category</button>
+            </div>
+          </div>
+          <div id="categories-list" class="flex space-x-4 overflow-x-auto horizontal-scroll pb-2">
+            <div *ngFor="let category of categories"
+              (click)="currentSelectedCategoryId = category.id; loadJobsForCategory(category.id)"
+              [class.selected]="currentSelectedCategoryId === category.id" class="item">
+              {{ category.name }}
+              <button class="edit-btn" (click)="editCategory(category.id, category.name); $event.stopPropagation()">
+                <i class="fas fa-edit"></i><span class="tooltip">Edit</span>
+              </button>
+              <button class="delete-btn" (click)="deleteCategory(category.id); $event.stopPropagation()">
+                <i class="fas fa-trash"></i><span class="tooltip">Delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jobs -->
+        <div id="jobs-section" [style.display]="currentSelectedCategoryId ? 'block' : 'none'">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-medium">Jobs</h3>
+            <div class="flex items-center space-x-2">
+              <input [(ngModel)]="newJobId" placeholder="Job ID (e.g., software-engineer)" class="p-2 border rounded">
+              <input [(ngModel)]="newJobTitle" placeholder="Job Title" class="p-2 border rounded">
+              <input [(ngModel)]="newJobDays" type="number" placeholder="Days (e.g., 80)" class="p-2 border rounded">
+              <input [(ngModel)]="newJobRole" placeholder="Role" class="p-2 border rounded">
+              <input [(ngModel)]="newJobIndustries" placeholder="Industries" class="p-2 border rounded">
+              <input [(ngModel)]="newJobDesc" placeholder="Description" class="p-2 border rounded">
+              <button (click)="addJob()"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Add Job</button>
+            </div>
+          </div>
+          <div id="jobs-list" class="flex space-x-4 overflow-x-auto horizontal-scroll pb-2">
+            <div *ngFor="let job of jobs" (click)="currentSelectedJobId = job.id; loadSkillsForJob(job.id)"
+              [class.selected]="currentSelectedJobId === job.id" class="item">
+              {{ job.title }}
+              <button class="edit-btn" (click)="editJob(job.id, job); $event.stopPropagation()">
+                <i class="fas fa-edit"></i><span class="tooltip">Edit</span>
+              </button>
+              <button class="delete-btn" (click)="deleteJob(job.id); $event.stopPropagation()">
+                <i class="fas fa-trash"></i><span class="tooltip">Delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div id="skills-section" [style.display]="currentSelectedJobId ? 'block' : 'none'">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-medium">Skills</h3>
+            <div class="flex items-center space-x-2">
+              <input [(ngModel)]="newSkillName" placeholder="Skill Name (e.g., Python)" class="p-2 border rounded">
+              <button (click)="addSkill()"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Add Skill</button>
+            </div>
+          </div>
+          <div id="skills-list" class="flex space-x-4 overflow-x-auto horizontal-scroll pb-2">
+            <div *ngFor="let skill of skills" (click)="currentSelectedSkillId = skill.id; loadDaysForSkill(skill.id)"
+              [class.selected]="currentSelectedSkillId === skill.id" class="item">
+              {{ skill.name }}
+              <button class="edit-btn" (click)="editSkill(skill.id, skill.name); $event.stopPropagation()">
+                <i class="fas fa-edit"></i><span class="tooltip">Edit</span>
+              </button>
+              <button class="delete-btn" (click)="deleteSkill(skill.id); $event.stopPropagation()">
+                <i class="fas fa-trash"></i><span class="tooltip">Delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Days -->
+        <div id="days-section" [style.display]="currentSelectedSkillId ? 'block' : 'none'">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-medium">Learning Path Days</h3>
+            <button (click)="initializeDaysForSkill(currentSelectedSkillId)"
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Initialize 80 Days</button>
+            <button (click)="addLearningPathDay()"
+              class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Add Day</button>
+          </div>
+          <div id="learning-days-list" class="flex space-x-2 overflow-x-auto horizontal-scroll pb-2">
+            <div *ngFor="let day of learningPathDays" (click)="currentSelectedDayId = day.id; loadDayContent(day.id)"
+              [class.selected]="currentSelectedDayId === day.id" class="item">
+              <div><strong>{{ day.topic || `Day ${day.day_number}` }}</strong></div>
+              <div style="font-size: 0.85em; color: #555;">
+                <div *ngIf="day.material_link">Material: <a [href]="day.material_link" target="_blank">{{
+                    day.material_link }}</a></div>
+                <div *ngIf="day.exercise_link">Exercise: <a [href]="day.exercise_link" target="_blank">{{
+                    day.exercise_link }}</a></div>
+                <div *ngIf="day.project_link">Project: <a [href]="day.project_link" target="_blank">{{ day.project_link
+                    }}</a></div>
+              </div>
+              <button class="edit-btn" (click)="openEditModal(day.id); $event.stopPropagation()">
+                <i class="fas fa-edit"></i><span class="tooltip">Edit</span>
+              </button>
+              <button class="delete-btn" (click)="deleteLearningDay(day.id); $event.stopPropagation()">
+                <i class="fas fa-trash"></i><span class="tooltip">Delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day Content -->
+        <div id="day-content-section" [style.display]="currentSelectedDayId ? 'block' : 'none'">
+          <h3 class="text-lg font-medium mb-3">Day Content</h3>
+          <div class="space-y-4">
+            <div>
+              <label for="day-title" class="block text-gray-700 font-medium">Day Title</label>
+              <input [(ngModel)]="dayTitle" id="day-title"
+                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+                placeholder="Enter day title">
+            </div>
+            <div>
+              <label for="material-link" class="block text-gray-700 font-medium">Material Link</label>
+              <input [(ngModel)]="materialLink" id="material-link"
+                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+                placeholder="Enter material link">
+            </div>
+            <div>
+              <label for="quiz-link" class="block text-gray-700 font-medium">Exercise Link</label>
+              <input [(ngModel)]="quizLink" id="quiz-link"
+                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+                placeholder="Enter exercise link">
+            </div>
+            <div>
+              <label for="project-link" class="block text-gray-700 font-medium">Project Link</label>
+              <input [(ngModel)]="projectLink" id="project-link"
+                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+                placeholder="Enter project link">
+            </div>
+            <div>
+              <label for="english-youtube" class="block text-gray-700 font-medium">English YouTube Link</label>
+              <input [(ngModel)]="englishYoutube" id="english-youtube"
+                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+                placeholder="Enter English YouTube link">
+            </div>
+            <div>
+              <label for="telugu-youtube" class="block text-gray-700 font-medium">Telugu YouTube Link</label>
+              <input [(ngModel)]="teluguYoutube" id="telugu-youtube"
+                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+                placeholder="Enter Telugu YouTube link">
+            </div>
+            <button (click)="saveDayContent()"
+              class="w-full bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">Save
+              Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Day Modal -->
+    <div id="edit-day-modal" class="modal" [class.show]="showEditModal">
+      <div class="modal-content">
+        <button type="button" class="close-btn" (click)="closeEditModal()">×</button>
+        <h3 class="text-lg font-semibold mb-4">Edit Day</h3>
+        <form (ngSubmit)="editLearningDay()">
+          <input type="hidden" [(ngModel)]="editDayId" name="editDayId">
+          <div class="mb-4">
+            <label for="edit-day-title" class="block text-gray-700 font-medium">Day Title</label>
+            <input [(ngModel)]="editDayTitle" id="edit-day-title" name="editDayTitle" class="w-full p-2 border rounded"
+              placeholder="Enter day title">
+          </div>
+          <div class="mb-4">
+            <label for="edit-material-link" class="block text-gray-700 font-medium">Material Link</label>
+            <input [(ngModel)]="editMaterialLink" id="edit-material-link" name="editMaterialLink"
+              class="w-full p-2 border rounded" placeholder="Enter material link">
+          </div>
+          <div class="mb-4">
+            <label for="edit-exercise-link" class="block text-gray-700 font-medium">Quiz Link</label>
+            <input [(ngModel)]="editExerciseLink" id="edit-exercise-link" name="editExerciseLink"
+              class="w-full p-2 border rounded" placeholder="Enter quiz link">
+          </div>
+          <div class="mb-4">
+            <label for="edit-project-link" class="block text-gray-700 font-medium">Project Link</label>
+            <input [(ngModel)]="editProjectLink" id="edit-project-link" name="editProjectLink"
+              class="w-full p-2 border rounded" placeholder="Enter project link">
+          </div>
+          <button type="submit" class="bg-blue-500 text-white">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<!-- course-select.component.html -->
+
+<!-- Loading Screen -->
+<div class="loading-screen" *ngIf="isLoading">
+  <div class="loading-content">
+    <div class="spinner"></div>
+    <p class="loading-text">Creating Your Learning Journey...</p>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="min-h-screen relative overflow-hidden" *ngIf="!isLoading">
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute bg-blur-1"></div>
+    <div class="absolute bg-blur-2"></div>
+    <div class="absolute bg-blur-3"></div>
+  </div>
+
+  <!-- Home Button -->
+  <a routerLink="/" class="home-button">
+    <svg class="icon" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9,22 9,12 15,12 15,22"></polyline></svg>
+    Home
+  </a>
+
+  <div class="relative z-10 container py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-16 fade-in">
+      <div class="mb-8">
+        <!-- You can add a hero image here if you want -->
+        <!-- <div class="hero-image">
+          <img [src]="heroImageUrl" alt="Educational Transformation">
+        </div> -->
+        <svg class="graduation-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="m6 12 5 5 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+      
+      <h1 class="main-title">
+        Select Your 
+        <span class="gradient-text"> Learning</span>
+        <br>Journey
+      </h1>
+      
+      <p class="subtitle">
+        Transforming Education into Career Success
+      </p>
+      
+      <div class="tagline">
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon></svg>
+        <span>Bridging Academics to Employability</span>
+        <svg class="star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon></svg>
+      </div>
+    </div>
+
+    <!-- Class Selection Grid -->
+    <div class="grid">
+      <!-- Use *ngFor to loop through the classLevels array -->
+      <div *ngFor="let level of classLevels; let i = index" class="card">
+        <div class="card-image">
+          <img [src]="level.imageUrl" [alt]="level.title">
+          <div class="gradient-overlay"></div>
+          <div class="level-badge" [ngClass]="level.gradient">
+            Level {{ i + 1 }}
+          </div>
+        </div>
+        <div class="card-content">
+          <div>
+            <h3 class="card-title">{{ level.title }}</h3>
+            <p class="card-subtitle">{{ level.subtitle }}</p>
+            <p class="card-description">{{ level.description }}</p>
+            <button class="start-button" [ngClass]="level.gradient" (click)="startLearning(level.id)">
+              <svg class="icon" viewBox="0 0 24 24"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline></svg>
+              Start Learning
+            </button>
+          </div>
+        </div>
+        <div class="hover-border"></div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA Section -->
+    <div class="bottom-cta slide-up">
+      <div class="cta-badge">
+        <svg class="icon" style="color: #93c5fd;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <span class="cta-text">Join 10,000+ Students Already Transforming Their Future</span>
+      </div>
+      
+      <p class="final-text">
+        Don't let 12-16 years of education go to waste. Choose your path to career success and life readiness.
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,331 @@
+﻿[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+[35mPrerendered 0 static routes.[39m
+Application bundle generation failed. [7.359 seconds] - 2025-11-23T05:58:45.094Z
+
+node.exe : [1m[31m[31mX 
+[41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'categories' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+At C:\Users\rajes\AppData\Roaming\npm\ng.ps1:24 char:5
++     & "node$exe"  
+"$basedir/node_modules/@angular/cli/bin/ng.js" $arg ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([1m[31m 
+   [31mX...r-compiler][0m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:341:17:
+[37m      341 Γöé             
+this.[32mcategories[37m = categories;
+          Γò╡                  [32m~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'jobs' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:364:13:
+[37m      364 Γöé         this.[32mjobs[37m = jobs;
+          Γò╡              [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: 
+Cannot find name 'downloadClassData'.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:710:8:
+[37m      710 Γöé         
+[32mdownloadClassData[37m(): void {
+          Γò╡         [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: 
+';' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:710:27:
+[37m      710 Γöé         
+downloadClassData()[32m:[37m void {
+          Γò╡                            [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1003: 
+Identifier expected.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:711:13:
+[37m      711 Γöé           
+if([32m![37mthis.currentClassId) {
+          Γò╡              [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2680: 
+A 'this' parameter must be the first parameter.[0m 
+[1m[35m[plugin angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:711:14:
+[37m      711 Γöé           
+if(![32mthis[37m.currentClassId) {
+          Γò╡               [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: 
+',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:711:18:
+[37m      711 Γöé           
+if(!this[32m.[37mcurrentClassId) {
+          Γò╡                   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: 
+',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:711:33:
+[37m      711 Γöé           
+if(!this.currentClassId[32m)[37m {
+          Γò╡                                  
+[32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: 
+';' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:711:35:
+[37m      711 Γöé           if(!this.currentClassId) 
+[32m{[37m
+          Γò╡                                    
+[32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2554: 
+Expected 1 arguments, but got 0.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:907:29:
+[37m      907 Γöé                     
+observer.[32mnext[37m();
+          Γò╡                              [32m~~~~[0m
+
+  An argument for 'value' was not provided.
+
+    node_modules/rxjs/dist/types/internal/Subscriber.d.t
+s:42:9:
+[37m      42 Γöé     next([32mvalue: T[37m): void;
+         Γò╡          [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2554: 
+Expected 1 arguments, but got 0.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:920:21:
+[37m      920 Γöé             
+observer.[32mnext[37m();
+          Γò╡                      [32m~~~~[0m
+
+  An argument for 'value' was not provided.
+
+    node_modules/rxjs/dist/types/internal/Subscriber.d.t
+s:42:9:
+[37m      42 Γöé     next([32mvalue: T[37m): void;
+         Γò╡          [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'downloadClassData' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    
+src/app/components/pages/dashboard/dashboard.html:28:25:
+[37m      28 Γöé         <button 
+(click)="[32mdownloadClassData[37m()" 
+class="download-btn ...
+         Γò╡                          
+[32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:16:15:
+[37m      16 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'categories' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.html:11
+6:41:
+[37m      116 Γöé             <div *ngFor="let 
+category of [32mcategories[37m"
+          Γò╡                                          
+[32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:16:15:
+[37m      16 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'jobs' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.html:14
+6:36:
+[37m      146 Γöé             <div *ngFor="let job of 
+[32mjobs[37m"
+          Γò╡                                     
+[32m~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:16:15:
+[37m      16 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'editSkill' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.html:17
+6:48:
+[37m      176 Γöé ... class="edit-btn" 
+(click)="[32meditSkill[37m(skill.id, skill.name); 
+$e...
+          Γò╡                               
+[32m~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:16:15:
+[37m      16 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'deleteSkill' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.html:17
+9:50:
+[37m      179 Γöé ...ass="delete-btn" 
+(click)="[32mdeleteSkill[37m(skill.id); 
+$event.stopPr...
+          Γò╡                              
+[32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:16:15:
+[37m      16 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: 
+Property 'addLearningPathDay' does not exist on type 
+'DashboardComponent'. Did you mean 
+'learningPathDays'?[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.html:19
+1:29:
+[37m      191 Γöé ...     <button 
+(click)="[32maddLearningPathDay[37m()" 
+class="bg-green-50...
+          Γò╡                          
+[32m~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:16:15:
+[37m      16 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'deleteLearningDay' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.html:20
+7:50:
+[37m      207 Γöé ...="delete-btn" 
+(click)="[32mdeleteLearningDay[37m(day.id); 
+$event.stopP...
+          Γò╡                           
+[32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:16:15:
+[37m      16 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: 
+Property 'editLearningDay' does not exist on type 
+'DashboardComponent'.[0m [1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/pages/dashboard/dashboard.html:25
+3:26:
+[37m      253 Γöé         <form 
+(ngSubmit)="[32meditLearningDay[37m()">
+          Γò╡                           
+[32m~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component 
+DashboardComponent.
+
+    src/app/components/pages/dashboard/ 
+dashboard.ts:16:15:
+[37m      16 Γöé   templateUrl: 
+[32m'./dashboard.html'[37m,
+         Γò╡                [32m~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

@@ -1,0 +1,2483 @@
+﻿[33mΓ¥»[39m Building...
+[32mΓ£ö[39m Building...
+[35mPrerendered 0 static routes.[39m
+Application bundle generation failed. [4.406 seconds] - 2025-11-23T04:54:07.434Z
+
+node.exe : 
+[1m[33m[33mΓû▓ [43;
+33m[[43;30mWARNING[43
+;33m][0m [1mNG8103: 
+The `*ngFor` directive 
+was used in the 
+template, but neither 
+the `NgFor` directive 
+nor the `CommonModule` 
+was imported. Use 
+Angular's built-in 
+control flow @for or 
+make sure that either 
+the `NgFor` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+At C:\Users\rajes\AppDa
+ta\Roaming\npm\ng.ps1:2
+4 char:5
++     & "node$exe"  "$b
+asedir/node_modules/@an
+gular/cli/bin/ng.js" 
+$arg ...
++     ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ([1m[33m[33   
+ mΓ...r-compiler][    
+0m:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:10:17:
+[37m      10 Γöé      
+   <option 
+*[32mngFor[37m="let 
+section of sections" 
+[value]="section....
+         Γò╡           
+       [32m~~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:18:13:
+[37m      18 Γöé     
+<button *[32mngIf[37m
+="currentSectionName 
+!== 'class11-12'"
+         Γò╡           
+   [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:25:10:
+[37m      25 Γöé     
+<div *[32mngIf[37m="s
+howClassSelection" 
+id="class-selection" 
+class="mb...
+         Γò╡           
+[32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngFor` directive was 
+used in the template, 
+but neither the 
+`NgFor` directive nor 
+the `CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @for or 
+make sure that either 
+the `NgFor` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:37:17:
+[37m      37 Γöé      
+   <button 
+*[32mngFor[37m="let 
+cls of classes"
+         Γò╡           
+       [32m~~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:47:10:
+[37m      47 Γöé     
+<div *[32mngIf[37m="s
+howDaySelection" 
+class="mb-6" 
+id="day-selection">
+         Γò╡           
+[32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngFor` directive was 
+used in the template, 
+but neither the 
+`NgFor` directive nor 
+the `CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @for or 
+make sure that either 
+the `NgFor` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:55:17:
+[37m      55 Γöé      
+   <button 
+*[32mngFor[37m="let 
+day of days"
+         Γò╡           
+       [32m~~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:65:10:
+[37m      65 Γöé     
+<div *[32mngIf[37m="s
+howContentForm" 
+class="bg-white p-6 
+rounded-lg sh...
+         Γò╡           
+[32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:73:14:
+[37m      73 Γöé      
+   <div *[32mngIf[37m
+="currentSectionName 
+!== 'summer special'">
+         Γò╡           
+    [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:78:14:
+[37m      78 Γöé      
+   <div *[32mngIf[37m
+="currentSectionName 
+=== 'summer special'">
+         Γò╡           
+    [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:93:14:
+[37m      93 Γöé      
+   <div *[32mngIf[37m
+="currentSectionName 
+!== 'summer special'">
+         Γò╡           
+    [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:103:10:
+[37m      103 Γöé     
+<div *[32mngIf[37m="s
+howCareerManagement" 
+id="career-management" 
+clas...
+          Γò╡          
+ [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngFor` directive was 
+used in the template, 
+but neither the 
+`NgFor` directive nor 
+the `CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @for or 
+make sure that either 
+the `NgFor` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:116:18:
+[37m      116 Γöé     
+        <div 
+*[32mngFor[37m="let 
+category of categories"
+          Γò╡          
+         [32m~~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:132:14:
+[37m      132 Γöé     
+    <div *[32mngIf[37
+m="currentSelectedCateg
+oryId" 
+id="jobs-section">
+          Γò╡          
+     [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngFor` directive was 
+used in the template, 
+but neither the 
+`NgFor` directive nor 
+the `CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @for or 
+make sure that either 
+the `NgFor` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:146:18:
+[37m      146 Γöé     
+        <div 
+*[32mngFor[37m="let 
+job of jobs"
+          Γò╡          
+         [32m~~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:162:14:
+[37m      162 Γöé     
+    <div *[32mngIf[37
+m="currentSelectedJobId
+" id="skills-section">
+          Γò╡          
+     [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngFor` directive was 
+used in the template, 
+but neither the 
+`NgFor` directive nor 
+the `CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @for or 
+make sure that either 
+the `NgFor` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:171:18:
+[37m      171 Γöé     
+        <div 
+*[32mngFor[37m="let 
+skill of skills"
+          Γò╡          
+         [32m~~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:187:14:
+[37m      187 Γöé     
+    <div *[32mngIf[37
+m="currentSelectedSkill
+Id" id="days-section">
+          Γò╡          
+     [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngFor` directive was 
+used in the template, 
+but neither the 
+`NgFor` directive nor 
+the `CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @for or 
+make sure that either 
+the `NgFor` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:194:18:
+[37m      194 Γöé     
+        <div 
+*[32mngFor[37m="let 
+day of 
+learningPathDays"
+          Γò╡          
+         [32m~~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:200:22:
+[37m      200 Γöé     
+            <div *[32m
+ngIf[37m="day.material
+_link">Material: <a 
+[href...
+          Γò╡          
+             
+[32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:201:22:
+[37m      201 Γöé     
+            <div *[32m
+ngIf[37m="day.exercise
+_link">Exercise: <a 
+[href...
+          Γò╡          
+             
+[32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:202:22:
+[37m      202 Γöé     
+            <div *[32m
+ngIf[37m="day.project_
+link">Project: <a 
+[href]=...
+          Γò╡          
+             
+[32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:215:14:
+[37m      215 Γöé     
+    <div *[32mngIf[37
+m="currentSelectedDayId
+" id="day-content-secti
+on">
+          Γò╡          
+     [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[33mΓû▓ [43;33m[[43;
+30mWARNING[43;33m][0m
+ [1mNG8103: The 
+`*ngIf` directive was 
+used in the template, 
+but neither the `NgIf` 
+directive nor the 
+`CommonModule` was 
+imported. Use 
+Angular's built-in 
+control flow @if or 
+make sure that either 
+the `NgIf` directive 
+or the `CommonModule` 
+is included in the 
+`@Component.imports` 
+array of this 
+component.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:249:10:
+[37m      249 Γöé     
+<div *[32mngIf[37m="s
+howEditModal" 
+class="modal show">
+          Γò╡          
+ [32m~~~~[0m
+
+  Warning occurs in 
+the template of 
+component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31
+m[[41;97mERROR[41;31m
+][0m [1mTS2307: 
+Cannot find module './c
+omponents/pages/admin-d
+ashboard/admin-dashboar
+d' or its 
+corresponding type 
+declarations.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/app.routes.
+ts:9:40:
+[37m      9 Γöé 
+...ponent } from [32m'
+./components/pages/admi
+n-dashboard/admin-dashb
+oard'[37m;
+        Γò╡            
+      [32m~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'select'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:7:14:
+[37m      7 Γöé       
+<select [32m[(ngModel)
+]="currentSectionId"[3
+7m (change)="loadClasse
+s(...
+        Γò╡            
+   [32m~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:70:17:
+[37m      70 Γöé      
+     <input [32m[(ngMo
+del)]="dayTitle"[37m 
+id="topic" 
+class="w-full p...
+         Γò╡           
+       [32m~~~~~~~~~~~
+~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:75:17:
+[37m      75 Γöé      
+     <input [32m[(ngMo
+del)]="quizLink"[37m 
+id="quiz" 
+class="w-full p-...
+         Γò╡           
+       [32m~~~~~~~~~~~
+~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:80:17:
+[37m      80 Γöé      
+     <input [32m[(ngMo
+del)]="materialLink"[3
+7m id="resource" 
+class="w...
+         Γò╡           
+       [32m~~~~~~~~~~~
+~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:85:17:
+[37m      85 Γöé      
+     <input [32m[(ngMo
+del)]="projectLink"[37
+m id="project" 
+class="w-f...
+         Γò╡           
+       [32m~~~~~~~~~~~
+~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:90:17:
+[37m      90 Γöé      
+     <input [32m[(ngMo
+del)]="englishYoutube"
+[37m 
+id="english-youtube"...
+         Γò╡           
+       [32m~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:95:17:
+[37m      95 Γöé      
+     <input [32m[(ngMo
+del)]="teluguYoutube"[
+37m 
+id="telugu-youtube" 
+c...
+         Γò╡           
+       [32m~~~~~~~~~~~
+~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:111:21:
+[37m      111 Γöé ... 
+         <input [32m[(
+ngModel)]="newCategoryN
+ame"[37m 
+placeholder="Ca...
+          Γò╡          
+           [32m~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:136:21:
+[37m      136 Γöé     
+          <input [32m[
+(ngModel)]="newJobId"[
+37m placeholder="Job 
+ID (...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:137:21:
+[37m      137 Γöé     
+          <input [32m[
+(ngModel)]="newJobTitle
+"[37m 
+placeholder="Job T...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:138:21:
+[37m      138 Γöé     
+          <input [32m[
+(ngModel)]="newJobDays"
+[37m type="number" 
+place...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:139:21:
+[37m      139 Γöé     
+          <input [32m[
+(ngModel)]="newJobRole"
+[37m 
+placeholder="Role" ...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:140:21:
+[37m      140 Γöé ... 
+        <input [32m[(n
+gModel)]="newJobIndustr
+ies"[37m 
+placeholder="In...
+          Γò╡          
+          [32m~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:141:21:
+[37m      141 Γöé     
+          <input [32m[
+(ngModel)]="newJobDesc"
+[37m 
+placeholder="Descri...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:166:21:
+[37m      166 Γöé     
+          <input [32m[
+(ngModel)]="newSkillNam
+e"[37m 
+placeholder="Skil...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~~~~~[0
+m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:220:21:
+[37m      220 Γöé     
+          <input [32m[
+(ngModel)]="dayTitle"[
+37m id="day-title" 
+class=...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:224:21:
+[37m      224 Γöé     
+          <input [32m[
+(ngModel)]="materialLin
+k"[37m 
+id="material-link...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~~~~~[0
+m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:228:21:
+[37m      228 Γöé     
+          <input [32m[
+(ngModel)]="quizLink"[
+37m id="quiz-link" 
+class=...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:232:21:
+[37m      232 Γöé     
+          <input [32m[
+(ngModel)]="projectLink
+"[37m 
+id="project-link" ...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:236:21:
+[37m      236 Γöé ... 
+         <input [32m[(
+ngModel)]="englishYoutu
+be"[37m 
+id="english-yout...
+          Γò╡          
+           [32m~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~[
+0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:240:21:
+[37m      240 Γöé     
+          <input [32m[
+(ngModel)]="teluguYoutu
+be"[37m 
+id="telugu-youtu...
+          Γò╡          
+            [32m~~~~~~
+~~~~~~~~~~~~~~~~~~~~~[
+0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:254:31:
+[37m      254 Γöé ... 
+  <input type="hidden" 
+[32m[(ngModel)]="editD
+ayId"[37m 
+name="editDayId">
+          Γò╡          
+                  [32m
+~~~~~~~~~~~~~~~~~~~~~~~
+[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:257:19:
+[37m      257 Γöé     
+        <input [32m[(n
+gModel)]="editDayTitle"
+[37m 
+id="edit-day-title"...
+          Γò╡          
+          [32m~~~~~~~~
+~~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:261:19:
+[37m      261 Γöé     
+        <input [32m[(n
+gModel)]="editMaterialL
+ink"[37m 
+id="edit-materi...
+          Γò╡          
+          [32m~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:265:19:
+[37m      265 Γöé     
+        <input [32m[(n
+gModel)]="editExerciseL
+ink"[37m 
+id="edit-exerci...
+          Γò╡          
+          [32m~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+[0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mNG8002: Can't bind 
+to 'ngModel' since it 
+isn't a known property 
+of 'input'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.html:269:19:
+[37m      269 Γöé     
+        <input [32m[(n
+gModel)]="editProjectLi
+nk"[37m 
+id="edit-project...
+          Γò╡          
+          [32m~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~[
+0m
+
+  Error occurs in the 
+template of component 
+DashboardComponent.
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:8:15:
+[37m      8 Γöé   
+templateUrl: [32m'./da
+shboard.html'[37m,
+        Γò╡            
+    [32m~~~~~~~~~~~~~~
+~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'language' does not 
+exist on type 
+'Video'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:165:41:
+[37m      165 Γöé 
+...t eng = 
+videos.find(v => 
+v.[32mlanguage[37m 
+=== 'english') || { 
+youtub...
+          Γò╡          
+                     
+[32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'topic' does not exist 
+on type '{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:167:34:
+[37m      167 Γöé     
+      this.dayTitle = c
+ontent.[32mtopic[37m 
+|| '';
+          Γò╡          
+                       
+  [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'resource_link' does 
+not exist on type 
+'{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:168:38:
+[37m      168 Γöé     
+      
+this.materialLink = con
+tent.[32mresource_link
+[37m || '';
+          Γò╡          
+                       
+      
+[32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'project_link' does 
+not exist on type 
+'{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:169:37:
+[37m      169 Γöé     
+      this.projectLink 
+= content.[32mproject_
+link[37m || '';
+          Γò╡          
+                       
+     
+[32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'language' does not 
+exist on type 
+'Video'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:183:41:
+[37m      183 Γöé 
+...t eng = 
+videos.find(v => 
+v.[32mlanguage[37m 
+=== 'english') || { 
+youtub...
+          Γò╡          
+                     
+[32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'language' does not 
+exist on type 
+'Video'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:184:41:
+[37m      184 Γöé 
+...t tel = 
+videos.find(v => 
+v.[32mlanguage[37m 
+=== 'telugu') || { 
+youtube...
+          Γò╡          
+                     
+[32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'topic' does not exist 
+on type '{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:186:34:
+[37m      186 Γöé     
+      this.dayTitle = c
+ontent.[32mtopic[37m 
+|| '';
+          Γò╡          
+                       
+  [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'quiz_link' does not 
+exist on type 
+'{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:187:34:
+[37m      187 Γöé     
+      this.quizLink = c
+ontent.[32mquiz_link[
+37m || '';
+          Γò╡          
+                       
+  [32m~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'project_link' does 
+not exist on type 
+'{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:188:37:
+[37m      188 Γöé     
+      this.projectLink 
+= content.[32mproject_
+link[37m || '';
+          Γò╡          
+                       
+     
+[32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'language' does not 
+exist on type 
+'Video'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:460:48:
+[37m      460 Γöé 
+...Video = 
+videos.find(v => 
+v.[32mlanguage[37m 
+=== 'english') || { 
+youtub...
+          Γò╡          
+                     
+[32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'language' does not 
+exist on type 
+'Video'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:461:48:
+[37m      461 Γöé 
+...Video = 
+videos.find(v => 
+v.[32mlanguage[37m 
+=== 'telugu') || { 
+youtube...
+          Γò╡          
+                     
+[32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'language' does not 
+exist on type 
+'Video'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:832:50:
+[37m      832 Γöé 
+...Video = 
+videos.find(v => 
+v.[32mlanguage[37m 
+=== 'english') || { 
+youtub...
+          Γò╡          
+                     
+[32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'language' does not 
+exist on type 
+'Video'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:833:50:
+[37m      833 Γöé 
+...Video = 
+videos.find(v => 
+v.[32mlanguage[37m 
+=== 'telugu') || { 
+youtube...
+          Γò╡          
+                     
+[32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'topic' does not exist 
+on type '{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:837:24:
+[37m      837 Γöé     
+            content.[3
+2mtopic[37m || '',
+          Γò╡          
+               
+[32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'quiz_link' does not 
+exist on type 
+'{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:838:24:
+[37m      838 Γöé     
+            content.[3
+2mquiz_link[37m || '',
+          Γò╡          
+               
+[32m~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mTS2339: Property 
+'project_link' does 
+not exist on type 
+'{}'.[0m 
+[1m[35m[plugin 
+angular-compiler][0m
+
+    src/app/components/
+pages/dashboard/dashboa
+rd.ts:839:24:
+[37m      839 Γöé     
+            content.[3
+2mproject_link[37m || 
+'',
+          Γò╡          
+               
+[32m~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mCould not resolve "
+./components/pages/admi
+n-dashboard/admin-dashb
+oard"[0m
+
+    src/app/app.routes.
+ts:9:40:
+[37m      9 Γöé 
+...ponent } from [32m'
+./components/pages/admi
+n-dashboard/admin-dashb
+oard'[37m;
+        Γò╡            
+      [32m~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97
+mERROR[41;31m][0m 
+[1mCould not resolve "
+./components/pages/admi
+n-dashboard/admin-dashb
+oard"[0m
+
+    src/app/app.routes.
+ts:9:40:
+[37m      9 Γöé 
+...ponent } from [32m'
+./components/pages/admi
+n-dashboard/admin-dashb
+oard'[37m;
+        Γò╡            
+      [32m~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

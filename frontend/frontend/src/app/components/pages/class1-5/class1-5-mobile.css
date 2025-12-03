@@ -1,0 +1,311 @@
+/* Mobile Responsiveness - Enhanced for World-Class Experience */
+
+/* Tablet Devices (1024px and below) */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 260px;
+    }
+
+    .main-content {
+        margin-left: 260px;
+    }
+
+    .content-wrapper {
+        padding: var(--spacing-lg);
+    }
+
+    .days-scroll {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+
+    /* Sidebar Mobile Behavior */
+    .sidebar {
+        width: 280px;
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-xl);
+        z-index: 1100;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Header Adjustments */
+    .header-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .profile-section {
+        order: 2;
+        width: 100%;
+    }
+
+    .profile-display {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .top-bar {
+        order: 1;
+        justify-content: flex-end;
+    }
+
+    .language-select {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    /* Days Grid - Optimized for Touch */
+    .days-scroll {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+
+    .day-item {
+        padding: var(--spacing-lg);
+        font-size: 0.95rem;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Video Container - Responsive Aspect Ratio */
+    .video-container {
+        padding-bottom: 56.25%;
+        /* Maintain 16:9 */
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Action Buttons - Stack on Mobile */
+    .action-buttons {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .action-btn {
+        min-width: unset;
+        width: 100%;
+        padding: var(--spacing-lg);
+        font-size: 1rem;
+    }
+
+    /* Typography Adjustments */
+    .section-header {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .sub-section-header {
+        font-size: 1rem;
+        padding: var(--spacing-md);
+    }
+
+    #topic-name {
+        font-size: 1.5rem;
+        padding: var(--spacing-lg) 0;
+        line-height: 1.4;
+    }
+
+    /* Navigation Buttons */
+    .nav-button {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+
+    /* Days Container */
+    .days-container {
+        padding: var(--spacing-lg);
+    }
+
+    /* Profile Dropdown */
+    .profile-dropdown {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    /* Modal Adjustments */
+    .modal-content {
+        width: 90%;
+        max-width: 500px;
+        margin: var(--spacing-md);
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-menu-toggle:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+
+    /* Ultra-compact for small phones */
+    .content-wrapper {
+        padding: var(--spacing-sm);
+    }
+
+    .days-container {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Compact Days Grid */
+    .days-scroll {
+        grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+
+    .day-item {
+        padding: var(--spacing-md);
+        font-size: 0.85rem;
+        min-height: 50px;
+    }
+
+    /* Compact Typography */
+    .section-header {
+        font-size: 1.25rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .sub-section-header {
+        font-size: 0.9rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    #topic-name {
+        font-size: 1.25rem;
+        padding: var(--spacing-md) 0;
+    }
+
+    /* Compact Action Buttons */
+    .action-btn {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 0.9rem;
+    }
+
+    .action-btn i {
+        font-size: 1rem;
+    }
+
+    /* Navigation Buttons */
+    .nav-button {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.85rem;
+        min-width: 80px;
+    }
+
+    .nav-buttons-container {
+        gap: var(--spacing-sm);
+    }
+
+    /* Profile Section */
+    .profile-display {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .profile-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .profile-name {
+        font-size: 0.95rem;
+    }
+
+    .profile-email {
+        font-size: 0.8rem;
+    }
+
+    /* Modal Adjustments */
+    .modal-content {
+        width: 95%;
+        margin: var(--spacing-xs);
+        padding: var(--spacing-md);
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content input,
+    .modal-content button {
+        font-size: 0.9rem;
+    }
+
+    /* Sidebar Adjustments */
+    .sidebar {
+        width: 85%;
+        max-width: 300px;
+    }
+
+    .GuideHead {
+        font-size: 1.5rem;
+    }
+
+    .class-item {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 0.9rem;
+    }
+
+    /* Mobile Menu Toggle - Larger Touch Target */
+    .mobile-menu-toggle {
+        width: 48px;
+        height: 48px;
+        top: var(--spacing-md);
+        left: var(--spacing-md);
+    }
+}
+
+/* Extra Small Devices (360px and below) */
+@media (max-width: 360px) {
+    .days-scroll {
+        grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+    }
+
+    .day-item {
+        padding: var(--spacing-sm);
+        font-size: 0.8rem;
+        min-height: 45px;
+    }
+
+    .section-header {
+        font-size: 1.1rem;
+    }
+
+    .sub-section-header {
+        font-size: 0.85rem;
+    }
+
+    #topic-name {
+        font-size: 1.1rem;
+    }
+
+    .action-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.85rem;
+    }
+}

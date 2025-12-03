@@ -1,0 +1,318 @@
+<!-- Loading Screen -->
+<div class="loading-overlay" *ngIf="isLoading">
+    <div class="spinner-container">
+        <div class="spinner"></div>
+        <p>{{ loadingMessage }}</p>
+        <div class="progress-bar" *ngIf="totalProgress > 0">
+            <div class="progress-fill" [style.width.%]="(currentProgress / totalProgress) * 100"></div>
+        </div>
+        <p class="progress-text" *ngIf="totalProgress > 0">{{ currentProgress }} / {{ totalProgress }}</p>
+    </div>
+</div>
+
+<!-- Health Dashboard Container -->
+<div class="health-dashboard">
+    <!-- Header Section -->
+    <div class="dashboard-header">
+        <div class="header-content">
+            <div class="title-section">
+                <h1 class="dashboard-title">
+                    <i class="fas fa-heartbeat"></i>
+                    Link Health Dashboard
+                </h1>
+                <p class="dashboard-subtitle">
+                    Monitor the status of all quiz, project, and video links across all classes
+                </p>
+            </div>
+
+            <div class="header-actions">
+                <button class="btn btn-refresh" (click)="refreshData()" [disabled]="isLoading">
+                    <i class="fas fa-sync-alt" [class.spinning]="isLoading"></i>
+                    Refresh
+                </button>
+                <button class="btn btn-export" (click)="exportReport()">
+                    <i class="fas fa-download"></i>
+                    Export Report
+                </button>
+            </div>
+        </div>
+
+        <!-- Last Checked Info -->
+        <div class="last-checked" *ngIf="lastChecked">
+            <i class="fas fa-clock"></i>
+            Last checked: {{ lastChecked | date:'medium' }}
+        </div>
+    </div>
+
+    <!-- Overall Statistics -->
+    <div class="overall-stats">
+        <div class="stat-card total">
+            <div class="stat-icon">
+                <i class="fas fa-link"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">{{ overallStats.totalLinks }}</div>
+                <div class="stat-label">Total Links</div>
+            </div>
+        </div>
+
+        <div class="stat-card working">
+            <div class="stat-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">{{ overallStats.workingLinks }}</div>
+                <div class="stat-label">Working Links</div>
+            </div>
+        </div>
+
+        <div class="stat-card broken">
+            <div class="stat-icon">
+                <i class="fas fa-times-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">{{ overallStats.brokenLinks }}</div>
+                <div class="stat-label">Broken Links</div>
+            </div>
+        </div>
+
+        <div class="stat-card empty">
+            <div class="stat-icon">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value">{{ overallStats.emptyLinks }}</div>
+                <div class="stat-label">Empty Links</div>
+            </div>
+        </div>
+
+        <div class="stat-card health">
+            <div class="stat-icon">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="stat-content">
+                <div class="stat-value" [style.color]="getHealthColor(overallStats.healthPercentage)">
+                    {{ overallStats.healthPercentage }}%
+                </div>
+                <div class="stat-label">Health Score</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="filters-section">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" [(ngModel)]="searchQuery" placeholder="Search sections or classes..."
+                class="search-input">
+        </div>
+
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label>Status:</label>
+                <div class="filter-buttons">
+                    <button class="filter-btn" [class.active]="filterOptions.status === 'all'"
+                        (click)="setFilterStatus('all')">All</button>
+                    <button class="filter-btn working" [class.active]="filterOptions.status === 'working'"
+                        (click)="setFilterStatus('working')">Working</button>
+                    <button class="filter-btn broken" [class.active]="filterOptions.status === 'broken'"
+                        (click)="setFilterStatus('broken')">Broken</button>
+                    <button class="filter-btn empty" [class.active]="filterOptions.status === 'empty'"
+                        (click)="setFilterStatus('empty')">Empty</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Link Type:</label>
+                <select [(ngModel)]="filterOptions.type" class="filter-select">
+                    <option value="all">All Links</option>
+                    <option value="quiz">Quiz Links</option>
+                    <option value="project">Project Links</option>
+                    <option value="english">English Videos</option>
+                    <option value="telugu">Telugu Videos</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sections List -->
+    <div class="sections-container">
+        <div class="section-card" *ngFor="let section of getFilteredSections()">
+            <!-- Section Header -->
+            <div class="section-header" (click)="toggleSection(section.sectionId)">
+                <div class="section-info">
+                    <h2 class="section-name">
+                        <i class="fas" [class.fa-chevron-down]="selectedSection === section.sectionId"
+                            [class.fa-chevron-right]="selectedSection !== section.sectionId"></i>
+                        {{ section.sectionName }}
+                    </h2>
+                    <div class="section-stats">
+                        <span class="stat-badge working">
+                            <i class="fas fa-check"></i> {{ section.workingLinks }}
+                        </span>
+                        <span class="stat-badge broken">
+                            <i class="fas fa-times"></i> {{ section.brokenLinks }}
+                        </span>
+                        <span class="stat-badge empty">
+                            <i class="fas fa-exclamation"></i> {{ section.emptyLinks }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="section-health">
+                    <div class="health-bar">
+                        <div class="health-fill" [style.width.%]="section.healthPercentage"
+                            [style.background-color]="getHealthColor(section.healthPercentage)">
+                        </div>
+                    </div>
+                    <span class="health-percentage" [style.color]="getHealthColor(section.healthPercentage)">
+                        {{ section.healthPercentage }}%
+                    </span>
+                </div>
+            </div>
+
+            <!-- Classes List (Expandable) -->
+            <div class="classes-container" *ngIf="selectedSection === section.sectionId">
+                <div class="class-card" *ngFor="let classItem of section.classes">
+                    <!-- Class Header -->
+                    <div class="class-header" (click)="toggleClass(classItem.classId)">
+                        <div class="class-info">
+                            <h3 class="class-name">
+                                <i class="fas" [class.fa-chevron-down]="selectedClass === classItem.classId"
+                                    [class.fa-chevron-right]="selectedClass !== classItem.classId"></i>
+                                {{ classItem.className }}
+                            </h3>
+                            <span class="days-count">{{ classItem.totalDays }} days</span>
+                        </div>
+
+                        <div class="class-stats">
+                            <span class="stat-badge working">{{ classItem.workingLinks }}</span>
+                            <span class="stat-badge broken">{{ classItem.brokenLinks }}</span>
+                            <span class="stat-badge empty">{{ classItem.emptyLinks }}</span>
+                            <span class="health-percentage" [style.color]="getHealthColor(classItem.healthPercentage)">
+                                {{ classItem.healthPercentage }}%
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Days List (Expandable) -->
+                    <div class="days-container" *ngIf="selectedClass === classItem.classId">
+                        <div class="day-card" *ngFor="let day of classItem.days">
+                            <div class="day-header">
+                                <div class="day-info">
+                                    <span class="day-number">Day {{ day.dayNumber }}</span>
+                                    <span class="day-topic">{{ day.topic }}</span>
+                                </div>
+                            </div>
+
+                            <div class="links-grid">
+                                <!-- Quiz Link -->
+                                <div class="link-item">
+                                    <div class="link-header">
+                                        <i class="fas fa-question-circle"></i>
+                                        <span>Quiz Link</span>
+                                    </div>
+                                    <div class="link-status">
+                                        <span class="status-indicator"
+                                            [style.background-color]="getStatusColor(day.quizLink.status)">
+                                            <i class="fas" [class.fa-check]="day.quizLink.status === 'working'"
+                                                [class.fa-times]="day.quizLink.status === 'broken'"
+                                                [class.fa-exclamation]="day.quizLink.status === 'empty'"
+                                                [class.fa-spinner]="day.quizLink.status === 'checking'"
+                                                [class.fa-spin]="day.quizLink.status === 'checking'">
+                                            </i>
+                                        </span>
+                                        <span class="status-text">{{ day.quizLink.status }}</span>
+                                        <a *ngIf="day.quizLink.url" [href]="day.quizLink.url" target="_blank"
+                                            class="link-url">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Project Link -->
+                                <div class="link-item">
+                                    <div class="link-header">
+                                        <i class="fas fa-project-diagram"></i>
+                                        <span>Project Link</span>
+                                    </div>
+                                    <div class="link-status">
+                                        <span class="status-indicator"
+                                            [style.background-color]="getStatusColor(day.projectLink.status)">
+                                            <i class="fas" [class.fa-check]="day.projectLink.status === 'working'"
+                                                [class.fa-times]="day.projectLink.status === 'broken'"
+                                                [class.fa-exclamation]="day.projectLink.status === 'empty'"
+                                                [class.fa-spinner]="day.projectLink.status === 'checking'"
+                                                [class.fa-spin]="day.projectLink.status === 'checking'">
+                                            </i>
+                                        </span>
+                                        <span class="status-text">{{ day.projectLink.status }}</span>
+                                        <a *ngIf="day.projectLink.url" [href]="day.projectLink.url" target="_blank"
+                                            class="link-url">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- English Video -->
+                                <div class="link-item">
+                                    <div class="link-header">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>English Video</span>
+                                    </div>
+                                    <div class="link-status">
+                                        <span class="status-indicator"
+                                            [style.background-color]="getStatusColor(day.englishVideo.status)">
+                                            <i class="fas" [class.fa-check]="day.englishVideo.status === 'working'"
+                                                [class.fa-times]="day.englishVideo.status === 'broken'"
+                                                [class.fa-exclamation]="day.englishVideo.status === 'empty'"
+                                                [class.fa-spinner]="day.englishVideo.status === 'checking'"
+                                                [class.fa-spin]="day.englishVideo.status === 'checking'">
+                                            </i>
+                                        </span>
+                                        <span class="status-text">{{ day.englishVideo.status }}</span>
+                                        <a *ngIf="day.englishVideo.url" [href]="day.englishVideo.url" target="_blank"
+                                            class="link-url">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Telugu Video -->
+                                <div class="link-item">
+                                    <div class="link-header">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>Telugu Video</span>
+                                    </div>
+                                    <div class="link-status">
+                                        <span class="status-indicator"
+                                            [style.background-color]="getStatusColor(day.teluguVideo.status)">
+                                            <i class="fas" [class.fa-check]="day.teluguVideo.status === 'working'"
+                                                [class.fa-times]="day.teluguVideo.status === 'broken'"
+                                                [class.fa-exclamation]="day.teluguVideo.status === 'empty'"
+                                                [class.fa-spinner]="day.teluguVideo.status === 'checking'"
+                                                [class.fa-spin]="day.teluguVideo.status === 'checking'">
+                                            </i>
+                                        </span>
+                                        <span class="status-text">{{ day.teluguVideo.status }}</span>
+                                        <a *ngIf="day.teluguVideo.url" [href]="day.teluguVideo.url" target="_blank"
+                                            class="link-url">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" *ngIf="!isLoading && sections.length === 0">
+        <i class="fas fa-inbox"></i>
+        <h3>No Data Available</h3>
+        <p>There are no sections or classes to monitor yet.</p>
+    </div>
+</div>

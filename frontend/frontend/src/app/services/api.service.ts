@@ -171,4 +171,8 @@ export class ApiService {
   saveLearningPathVideo(dayId: string, language: 'english' | 'telugu', youtubeLink: string): Observable<any> {
     return this.http.post<any>(`${this.apiBase}/learning_path/video/${dayId}/${language}`, { youtube_link: youtubeLink }).pipe(catchError(this.handleError));
   }
+  // Link Validation
+  validateLink(url: string, type: 'youtube' | 'general'): Observable<{ status: string, code?: number, error?: string }> {
+    return this.http.post<{ status: string, code?: number, error?: string }>(`${this.apiBaseNoAdmin}/validate-link`, { url, type }).pipe(catchError(this.handleError));
+  }
 }

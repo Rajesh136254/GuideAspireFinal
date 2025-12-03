@@ -7,6 +7,7 @@ import { Class1_5Component } from './components/pages/class1-5/class1-5';
 import { Class6_10Component } from './components/pages/class6-10/class6-10';
 import { SummerComponent } from './components/pages/summer/summer';
 import { DashboardComponent } from './components/pages/dashboard/dashboard';
+import { HealthDashboardComponent } from './components/pages/health-dashboard/health-dashboard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -17,5 +18,6 @@ export const routes: Routes = [
     { path: 'class1-5', component: Class1_5Component },
     { path: 'class6-10', component: Class6_10Component },
     { path: 'summer', component: SummerComponent },
-    { path: 'admin-dashboard', component: DashboardComponent }
+    { path: 'admin-dashboard', component: DashboardComponent },
+    { path: 'health-dashboard', component: HealthDashboardComponent }
 ];

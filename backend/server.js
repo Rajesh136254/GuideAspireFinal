@@ -612,13 +612,13 @@ app.get('/api/admin/summer/content/:day_number', async (req, res) => {
   }
 });
 app.get('/api/admin/summer/content/summer', async (req, res) => {
-    try {
-        const [days] = await pool.query('SELECT day_number FROM summer_content WHERE category = ? ORDER BY day_number', ['summer']);
-        res.json(days || []); // Always return an array
-    } catch (err) {
-        console.error('Error fetching summer days:', err.message);
-        res.status(500).json({ error: 'Failed to fetch summer days: ' + err.message });
-    }
+  try {
+    const [days] = await pool.query('SELECT day_number FROM summer_content WHERE category = ? ORDER BY day_number', ['summer']);
+    res.json(days || []); // Always return an array
+  } catch (err) {
+    console.error('Error fetching summer days:', err.message);
+    res.status(500).json({ error: 'Failed to fetch summer days: ' + err.message });
+  }
 });
 
 app.get('/api/summer/video/:category/:day_number/:language', async (req, res) => {
@@ -1229,25 +1229,25 @@ app.post('/api/admin/summer/video/:day_number/:language', async (req, res) => {
 });
 
 app.post('/api/admin/summer/day', async (req, res) => {
-    const { category, day_number } = req.body;
-    if (!category || !day_number) {
-        return res.status(400).json({ error: 'category and day_number are required' });
+  const { category, day_number } = req.body;
+  if (!category || !day_number) {
+    return res.status(400).json({ error: 'category and day_number are required' });
+  }
+  if (day_number > 25) {
+    return res.status(400).json({ error: 'Maximum 25 days allowed for Summer Special' });
+  }
+  try {
+    const [existing] = await pool.query('SELECT * FROM summer_content WHERE category = ? AND day_number = ?', [category, day_number]);
+    if (existing.length > 0) {
+      return res.status(409).json({ error: `Day ${day_number} already exists for category ${category}` });
     }
-    if (day_number > 25) {
-        return res.status(400).json({ error: 'Maximum 25 days allowed for Summer Special' });
-    }
-    try {
-        const [existing] = await pool.query('SELECT * FROM summer_content WHERE category = ? AND day_number = ?', [category, day_number]);
-        if (existing.length > 0) {
-            return res.status(409).json({ error: `Day ${day_number} already exists for category ${category}` });
-        }
-        const [result] = await pool.query('INSERT INTO summer_content (category, day_number) VALUES (?, ?)', [category, day_number]);
-        console.log(`Added new summer day: category=${category}, day_number=${day_number}`);
-        res.json({ id: result.insertId, day_number });
-    } catch (err) {
-        console.error('Error adding summer day:', err.message);
-        res.status(500).json({ error: 'Failed to add summer day: ' + err.message });
-    }
+    const [result] = await pool.query('INSERT INTO summer_content (category, day_number) VALUES (?, ?)', [category, day_number]);
+    console.log(`Added new summer day: category=${category}, day_number=${day_number}`);
+    res.json({ id: result.insertId, day_number });
+  } catch (err) {
+    console.error('Error adding summer day:', err.message);
+    res.status(500).json({ error: 'Failed to add summer day: ' + err.message });
+  }
 });
 
 
@@ -1491,15 +1491,15 @@ app.post('/api/admin/learning_path/video/:learning_path_day_id/:language', async
         [youtube_link, learning_path_day_id, language]
       );
       console.log('Updated video for day_id:', learning_path_day_id, 'language:', language, 'youtube_id:', youtube_link);
-  // Return the stored youtube id so frontend can confirm persistence
-  return res.json({ success: true, youtube_id: youtube_link });
+      // Return the stored youtube id so frontend can confirm persistence
+      return res.json({ success: true, youtube_id: youtube_link });
     } else {
       await pool.query(
         'INSERT INTO learning_path_videos (learning_path_day_id, language, youtube_id) VALUES (?, ?, ?)',
         [learning_path_day_id, language, youtube_link]
       );
       console.log('Inserted video for day_id:', learning_path_day_id, 'language:', language, 'youtube_id:', youtube_link);
-  return res.json({ success: true, youtube_id: youtube_link });
+      return res.json({ success: true, youtube_id: youtube_link });
     }
 
     res.json({ success: true, message: 'Video saved successfully' });
@@ -1514,24 +1514,24 @@ app.post('/api/admin/learning_path/video/:learning_path_day_id/:language', async
 
 // Fetch learning path day by ID
 app.get('/api/learning_path/day/:day_id', async (req, res) => {
-    try {
-        const [rows] = await pool.query(
-            'SELECT * FROM learning_path_days WHERE id = ?',
-            [req.params.day_id]
-        );
-        if (rows.length === 0) {
-            return res.json({
-                topic: '',
-                material_link: '',
-                exercise_link: '',
-                project_link: ''
-            });
-        }
-        res.json(rows[0]);
-    } catch (err) {
-        console.error('Error fetching learning path day:', err.message);
-        res.status(500).json({ error: 'Failed to fetch day: ' + err.message });
+  try {
+    const [rows] = await pool.query(
+      'SELECT * FROM learning_path_days WHERE id = ?',
+      [req.params.day_id]
+    );
+    if (rows.length === 0) {
+      return res.json({
+        topic: '',
+        material_link: '',
+        exercise_link: '',
+        project_link: ''
+      });
     }
+    res.json(rows[0]);
+  } catch (err) {
+    console.error('Error fetching learning path day:', err.message);
+    res.status(500).json({ error: 'Failed to fetch day: ' + err.message });
+  }
 });
 
 // Fetch videos for a learning path day
@@ -1795,6 +1795,198 @@ app.post('/api/admin/day', async (req, res) => {
   }
 });
 
+
+
+// --- Link Validation Feature ---
+const https = require('https');
+const http = require('http');
+const { URL } = require('url');
+
+// Helper function to check URL status
+const checkUrlStatus = (url) => {
+  return new Promise((resolve, reject) => {
+    try {
+      const parsedUrl = new URL(url);
+      const protocol = parsedUrl.protocol === 'https:' ? https : http;
+
+      const options = {
+        method: 'HEAD',
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        },
+        timeout: 5000 // 5 second timeout
+      };
+
+      const req = protocol.request(url, options, (res) => {
+        if (res.statusCode >= 200 && res.statusCode < 400) {
+          resolve({ status: 'working', code: res.statusCode });
+        } else if (res.statusCode === 405) {
+          // Method Not Allowed, try GET
+          resolve({ status: 'retry_get' });
+        } else {
+          resolve({ status: 'broken', code: res.statusCode });
+        }
+      });
+
+      req.on('error', (err) => {
+        resolve({ status: 'broken', error: err.message });
+      });
+
+      req.on('timeout', () => {
+        req.destroy();
+        resolve({ status: 'broken', error: 'timeout' });
+      });
+
+      req.end();
+    } catch (error) {
+      resolve({ status: 'broken', error: 'invalid_url' });
+    }
+  });
+};
+
+// Helper for GET request (fallback)
+const checkUrlStatusGet = (url) => {
+  return new Promise((resolve, reject) => {
+    try {
+      const parsedUrl = new URL(url);
+      const protocol = parsedUrl.protocol === 'https:' ? https : http;
+      const options = {
+        method: 'GET',
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        },
+        timeout: 5000
+      };
+
+      const req = protocol.request(url, options, (res) => {
+        // We just need the headers, so we can destroy the request immediately
+        res.resume(); // Consume response data to free up memory
+        if (res.statusCode >= 200 && res.statusCode < 400) {
+          resolve({ status: 'working', code: res.statusCode });
+        } else {
+          resolve({ status: 'broken', code: res.statusCode });
+        }
+      });
+
+      req.on('error', (err) => {
+        resolve({ status: 'broken', error: err.message });
+      });
+
+      req.on('timeout', () => {
+        req.destroy();
+        resolve({ status: 'broken', error: 'timeout' });
+      });
+
+      req.end();
+    } catch (error) {
+      resolve({ status: 'broken', error: 'invalid_url' });
+    }
+  });
+};
+
+// Helper function to validate YouTube videos using oEmbed API
+const checkYouTubeVideo = (videoUrl) => {
+  return new Promise((resolve) => {
+    try {
+      const oembedUrl = `https://www.youtube.com/oembed?url=${encodeURIComponent(videoUrl)}&format=json`;
+      
+      const options = {
+        method: 'GET',
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        },
+        timeout: 8000
+      };
+
+      const req = https.request(oembedUrl, options, (res) => {
+        let data = '';
+        
+        // Collect response data
+        res.on('data', (chunk) => {
+          data += chunk;
+        });
+
+        res.on('end', () => {
+          // Check status code
+          if (res.statusCode === 404 || res.statusCode >= 400) {
+            resolve({ status: 'broken', code: res.statusCode });
+            return;
+          }
+
+          // Check if response contains valid JSON (video exists)
+          try {
+            const jsonData = JSON.parse(data);
+            // If we get valid JSON with title, video is available
+            if (jsonData && jsonData.title) {
+              resolve({ status: 'working', code: res.statusCode });
+            } else {
+              resolve({ status: 'broken', code: res.statusCode });
+            }
+          } catch (parseError) {
+            // If JSON parsing fails, video might be unavailable
+            // Check for common error messages
+            if (data.includes('Not Found') || data.includes('Private video') || data.includes('unavailable')) {
+              resolve({ status: 'broken', code: res.statusCode });
+            } else {
+              resolve({ status: 'broken', code: res.statusCode });
+            }
+          }
+        });
+      });
+
+      req.on('error', (err) => {
+        resolve({ status: 'broken', error: err.message });
+      });
+
+      req.on('timeout', () => {
+        req.destroy();
+        resolve({ status: 'broken', error: 'timeout' });
+      });
+
+      req.end();
+    } catch (error) {
+      resolve({ status: 'broken', error: 'invalid_url' });
+    }
+  });
+};
+
+// Endpoint to validate links
+app.post('/api/validate-link', async (req, res) => {
+  const { url, type } = req.body;
+
+  if (!url) {
+    return res.json({ status: 'empty' });
+  }
+
+  try {
+    if (type === 'youtube') {
+      // Use specialized YouTube validation
+      // url input might be just ID or full URL. Let's handle both.
+      let videoUrl = url;
+      if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
+        videoUrl = `https://www.youtube.com/watch?v=${url}`;
+      }
+
+      const result = await checkYouTubeVideo(videoUrl);
+      if (result.status === 'working') {
+        return res.json({ status: 'working' });
+      } else {
+        return res.json({ status: 'broken' });
+      }
+    } else {
+      // General link check for quiz and project links
+      let result = await checkUrlStatus(url);
+      if (result.status === 'retry_get') {
+        result = await checkUrlStatusGet(url);
+      }
+      res.json(result);
+    }
+  } catch (error) {
+    console.error('Link validation error:', error);
+    res.json({ status: 'broken', error: error.message });
+  }
+});
+// -----------------------------
 
 const port = 3000;
 
